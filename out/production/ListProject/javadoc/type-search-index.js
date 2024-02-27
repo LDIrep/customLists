@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.ldi.List.ArrayList","l":"ArrayList"},{"p":"ru.ldi.List.ArrayList","l":"ArrayListRunner"},{"p":"ru.ldi.List.LinkedList","l":"LinkedList"},{"p":"ru.ldi.List.LinkedList","l":"LinkedListRunner"},{"p":"ru.ldi.List.Interface","l":"List"}];updateSearchResults();
