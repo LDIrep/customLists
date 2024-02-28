@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.ldi.List.ArrayList"},{"l":"ru.ldi.List.Interface"},{"l":"ru.ldi.List.LinkedList"}];updateSearchResults();
