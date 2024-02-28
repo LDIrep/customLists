@@ -62,7 +62,7 @@ public class ArrayList<T> implements List<T> {
     public ArrayList(LinkedList<T> linkedList) {
         int linkedListSize = linkedList.getSize();
         array = createArray(linkedListSize * 3);
-        for (int i = 0; i < linkedListSize-1; i++) {
+        for (int i = 0; i < linkedListSize - 1; i++) {
             array[i] = linkedList.get(i);
             size++;
             maxIndex++;
@@ -81,14 +81,17 @@ public class ArrayList<T> implements List<T> {
             increaseArraySize();
         }
         array[size++] = t;
+        System.out.println("Size is: " + size);
         maxIndex++;
+        System.out.println("Max index is: " + maxIndex);
+        System.out.println("Array length: " + getLength());
     }
 
     /**
      * Adds the specified element to the array list at the specified index.
      * If the array list is full, it will be expanded.
      *
-     * @param t The element to be added to the array list.
+     * @param t     The element to be added to the array list.
      * @param index The index at which the element should be added.
      * @throws IllegalArgumentException If the index is less than 0 or greater than the size of the array list.
      */
@@ -146,9 +149,14 @@ public class ArrayList<T> implements List<T> {
 
     /**
      * Sorts the elements in the array list using the quick sort algorithm.
+     *
+     * @throws IndexOutOfBoundsException when an attempt is made to access an element at a specific index in an empty list
      */
     @Override
     public void sort() {
+        if (size == 0){
+            throw new IndexOutOfBoundsException("List is empty");
+        }
         Arrays.sort(array, 0, size);
     }
 
@@ -163,29 +171,26 @@ public class ArrayList<T> implements List<T> {
     }
 
     /**
-     *
      * @return Returns a comma separated string representation of our array list.
      */
     @Override
     public String toString() {
-        StringBuffer stringBuffer = new StringBuffer("ArrayList { ");
+        StringBuilder stringBuilder = new StringBuilder("ArrayList { ");
         for (int i = 0; i < size; i++) {
-            if (i == size-1){
-                stringBuffer.append(array[i]);
-            } else stringBuffer.append(array[i] + ", ");
+            if (i == size - 1) {
+                stringBuilder.append(array[i]);
+            } else stringBuilder.append(array[i] + ", ");
         }
-        stringBuffer.append(" }");
-        return stringBuffer.toString();
+        stringBuilder.append(" }");
+        return stringBuilder.toString();
     }
 
     /**
-     *
      * @return Returns an iterator for our array list.
      */
     @Override
     public Iterator<T> iterator() {
         Iterator<T> iterator = new Iterator<T>() {
-
             private int currentIndex = 0;
 
             @Override
@@ -208,10 +213,17 @@ public class ArrayList<T> implements List<T> {
     }
 
     private void increaseArraySize() {
+        int tempSize = size;
+        int tempMaxIndex = maxIndex;
         T[] newArray = createArray(array.length * 2);
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < tempSize; i++) {
             newArray[i] = array[i];
         }
         array = newArray;
+        size = tempSize;
+        maxIndex = tempMaxIndex;
+    }
+    public int getLength(){
+        return array.length;
     }
 }

@@ -205,13 +205,13 @@ public class LinkedList<T> implements List<T> {
         if (current == null){
             return "Linked list is empty";
         }
-        StringBuffer stringBuffer = new StringBuffer("LinkedList { ");
+        StringBuilder stringBuilder = new StringBuilder("LinkedList { ");
         while (current.getNext() != null) {
-            stringBuffer.append(current.getElement() + ", ");
+            stringBuilder.append(current.getElement() + ", ");
             current = current.getNext();
         }
-        stringBuffer.append(current.getElement());
-        stringBuffer.append(" }");
-        return stringBuffer.toString();
+        stringBuilder.append(current.getElement());
+        stringBuilder.append(" }");
+        return stringBuilder.toString();
     }
 }

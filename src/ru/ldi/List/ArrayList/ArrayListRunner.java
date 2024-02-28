@@ -14,9 +14,10 @@ public class ArrayListRunner {
 
         System.out.println("\nAdd elements");
 
-        integers.add(5);
-        integers.add(8);
-        integers.add(1);
+        for (int i = 0; i < 24; i++) {
+            integers.add(i);
+            System.out.println(i);
+        }
 
         System.out.println("\nSelect elements using get method");
 
@@ -59,6 +60,5 @@ public class ArrayListRunner {
 
         System.out.println();
         System.out.println(integers);
-
     }
 }
