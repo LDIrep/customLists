@@ -81,10 +81,7 @@ public class ArrayList<T> implements List<T> {
             increaseArraySize();
         }
         array[size++] = t;
-        System.out.println("Size is: " + size);
         maxIndex++;
-        System.out.println("Max index is: " + maxIndex);
-        System.out.println("Array length: " + getLength());
     }
 
     /**
@@ -222,8 +219,5 @@ public class ArrayList<T> implements List<T> {
         array = newArray;
         size = tempSize;
         maxIndex = tempMaxIndex;
-    }
-    public int getLength(){
-        return array.length;
     }
 }
