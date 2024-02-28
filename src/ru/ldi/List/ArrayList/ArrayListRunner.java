@@ -16,7 +16,6 @@ public class ArrayListRunner {
 
         for (int i = 0; i < 24; i++) {
             integers.add(i);
-            System.out.println(i);
         }
 
         System.out.println("\nSelect elements using get method");
